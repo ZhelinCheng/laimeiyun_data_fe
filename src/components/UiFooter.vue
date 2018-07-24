@@ -1,14 +1,13 @@
 <template>
-  <div id="app">
-    <router-view/>
-  </div>
+  <div class="footer"></div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'UiFooter'
 };
 </script>
 
-<style>
+<style scoped>
+
 </style>
