@@ -76,7 +76,8 @@ export default {
         xAxis: {
           // type: 'time',
           boundaryGap: false,
-          data: this.xAxisData
+          data: this.xAxisData,
+          splitLine:{show: false}
           // position: 'top'
         },
         yAxis: {

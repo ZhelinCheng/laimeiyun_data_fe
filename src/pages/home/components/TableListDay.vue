@@ -129,10 +129,11 @@
           :width=itemWidth>
         </el-table-column>
         <el-table-column
-          prop="weibo_total.rank"
-          sortable
           label="榜单排名"
           :width=itemWidth>
+          <template slot-scope="scope">
+            <span>{{ scope.row.weibo_total.rank }} / {{ scope.row.power_list }}</span>
+          </template>
         </el-table-column>
         <el-table-column
           prop="weibo_index"
