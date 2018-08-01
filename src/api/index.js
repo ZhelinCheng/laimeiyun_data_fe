@@ -9,7 +9,7 @@ function getHomeInfo() {
 }
 
 function getHourDataApi(id) {
-  return axiosApi(`hour/${id}`);
+  return axiosApi(`hour/day/${id}`);
 }
 
 function getDayDataApi(id) {

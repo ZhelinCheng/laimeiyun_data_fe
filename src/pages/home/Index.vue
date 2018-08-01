@@ -3,7 +3,7 @@
       <el-alert
         title="说明"
         type="warning"
-        description="该版本为尝鲜版，其他功能还在紧锣密鼓的开发中。当然，如果发现页面数据有任何错误，可以发送邮件：i@zhelin.me 反馈给我。"
+        description="点击“分时详情”，发现更多。如果发现页面数据有任何错误，可以发送邮件：i@zhelin.me 反馈给我。"
         center>
       </el-alert>
       <h2 class="home-title">火箭少女101数据中心（尝鲜版）</h2>

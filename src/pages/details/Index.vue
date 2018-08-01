@@ -153,7 +153,7 @@ export default {
       margin-bottom: 1.6em;
     }
     .details-hour {
-      margin-bottom: 2em;
+      margin-bottom: 1.6em;
     }
   }
 </style>
