@@ -13,5 +13,8 @@ export default new Router({
       component: Root,
       children: [Home, Details]
     }
-  ]
+  ],
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  }
 });
