@@ -92,6 +92,7 @@ export default {
             name: this.seriesData.inverse ? '排名' : '增长',
             type: 'line',
             data: this.seriesData.data,
+            smooth: true,
             markPoint: {
               data: [
                 { type: 'max', name: '最大值' },

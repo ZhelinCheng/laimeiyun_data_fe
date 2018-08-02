@@ -3,7 +3,7 @@
       <el-alert
         title="说明"
         type="warning"
-        description="点击“分时详情”，发现更多。如果发现页面数据有任何错误，可以发送邮件：i@zhelin.me 反馈给我。"
+        description="微博势力的评分及排名两项数据之前一直统计的是周数据，目前已修正为天数据！。"
         center>
       </el-alert>
       <h2 class="home-title">火箭少女101数据中心（尝鲜版）</h2>

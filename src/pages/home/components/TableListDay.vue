@@ -27,7 +27,7 @@
           :width=itemWidth>
         </el-table-column>
         <el-table-column
-          prop="weibo_read.total"
+          prop="weibo_read.total_day"
           sortable
           label="阅读评分"
           :width=itemWidth>
@@ -57,7 +57,7 @@
           :width=itemWidth>
         </el-table-column>
         <el-table-column
-          prop="weibo_int.total"
+          prop="weibo_int.total_day"
           sortable
           label="互动评分"
           :width=itemWidth>
@@ -87,7 +87,7 @@
           width='100'>
         </el-table-column>
         <el-table-column
-          prop="weibo_inf.total"
+          prop="weibo_inf.total_day"
           sortable
           label="影响评分"
           :width=itemWidth>
@@ -117,13 +117,13 @@
           :width=itemWidth>
         </el-table-column>
         <el-table-column
-          prop="weibo_love.total"
+          prop="weibo_love.total_day"
           sortable
           label="爱慕评分"
           :width=itemWidth>
         </el-table-column>
         <el-table-column
-          prop="weibo_total.total"
+          prop="weibo_total.total_day"
           sortable
           label="总评分"
           :width=itemWidth>
@@ -132,7 +132,7 @@
           label="榜单排名"
           :width=itemWidth>
           <template slot-scope="scope">
-            <span>{{ scope.row.weibo_total.rank }} / {{ scope.row.power_list }}</span>
+            <span>{{ scope.row.weibo_total.rank_day }} / {{ scope.row.weibo_total.title }}</span>
           </template>
         </el-table-column>
         <el-table-column

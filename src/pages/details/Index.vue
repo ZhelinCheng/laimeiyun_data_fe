@@ -170,7 +170,7 @@ export default {
         this.seriesSaveDay.weibo_int.data.push(item.weibo_int.interact - prev.weibo_int.interact);
         this.seriesSaveDay.weibo_inf.data.push(item.weibo_inf.mention_search - prev.weibo_inf.mention_search);
         this.seriesSaveDay.weibo_love.data.push(item.weibo_love.close - prev.weibo_love.close);
-        this.seriesSaveDay.weibo_total.data.push(item.weibo_total.rank);
+        this.seriesSaveDay.weibo_total.data.push(item.weibo_total.rank_day);
       }
       this.xAxisDataDay = axis;
       this.dayData = data;
