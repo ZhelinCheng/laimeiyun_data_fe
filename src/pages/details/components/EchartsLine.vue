@@ -70,7 +70,7 @@ export default {
           }
         },
         grid: [{
-          left: this.id === 'j-echarts-day' ? 60 : 45,
+          left: this.id === 'j-echarts-day' ? 65 : 45,
           right: 15
         }],
         xAxis: {
