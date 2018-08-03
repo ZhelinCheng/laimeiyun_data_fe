@@ -27,6 +27,8 @@ import {
   Radio,
   RadioGroup,
   RadioButton } from 'element-ui';
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 Vue.use(Table);
 Vue.use(TableColumn);
@@ -58,6 +60,13 @@ Vue.config.productionTip = false;
 
 
 /* eslint-disable no-new */
+router.beforeEach((to, from, next) => {
+  NProgress.start();
+  next();
+});
+router.afterEach(() => {
+  NProgress.done();
+});
 
 new Vue({
   el: '#app',

@@ -53,7 +53,7 @@ export default {
         },
         // tooltip提示文字
         legend: {
-          data: [this.seriesData.inverse ? '排名' : '增长'],
+          data: [this.seriesData.name || '增长'],
           x: 'left'
         },
         // 工具栏组件
@@ -89,10 +89,10 @@ export default {
         },
         series: [
           {
-            name: this.seriesData.inverse ? '排名' : '增长',
+            name: this.seriesData.name || '增长',
             type: 'line',
             data: this.seriesData.data,
-            smooth: true,
+            // smooth: true,
             markPoint: {
               data: [
                 { type: 'max', name: '最大值' },

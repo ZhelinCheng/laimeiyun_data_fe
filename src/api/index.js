@@ -19,7 +19,7 @@ function getHourDayDataApi(id) {
 }
 
 function getDayDataApi(id) {
-  return axiosApi(`day/week/${id}`);
+  return axiosApi(`day/month/${id}`);
 }
 
 export default {

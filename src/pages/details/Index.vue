@@ -98,20 +98,20 @@ export default {
       if (type === 'day') {
         data = await this.$api.getHourDataApi(this.memberID);
         this.seriesSaveHour = {
-          baike_browse: { title: '百科浏览增长趋势', subtext: '24h浏览分时增长变化', data: [] },
-          baike_flowers: { title: '百科鲜花增长趋势', subtext: '24h鲜花分时增长变化', data: [] },
-          weibo_fans: { title: '微博粉丝增长趋势', subtext: '24h微博粉丝分时增长变化', data: [] },
-          doki_fans: { title: 'Doki粉丝增长趋势', subtext: '24h Doki粉丝分时增长变化', data: [] },
-          super_rank: { title: '超话排名变化趋势', subtext: '超级话题排名变化', data: [], inverse: true }
+          baike_browse: { title: '百科浏览增长趋势', subtext: '24小时图（增长数据）', data: [] },
+          baike_flowers: { title: '百科鲜花增长趋势', subtext: '24小时图（增长数据）', data: [] },
+          weibo_fans: { title: '微博粉丝增长趋势', subtext: '24小时图（增长数据）', data: [] },
+          doki_fans: { title: 'Doki粉丝增长趋势', subtext: '24小时图（增长数据）', data: [] },
+          super_rank: { title: '超话排名变化趋势', subtext: '24小时图（变化数据）', data: [], inverse: true, name: '超话排名' }
         };
       } else {
         data = await this.$api.getHourDayDataApi(this.memberID);
         this.seriesSaveHourDay = {
-          baike_browse: { title: '百科浏览增长趋势', subtext: '30天浏览增长变化', data: [] },
-          baike_flowers: { title: '百科鲜花增长趋势', subtext: '30天鲜花增长变化', data: [] },
-          weibo_fans: { title: '微博粉丝增长趋势', subtext: '30天微博粉丝增长变化', data: [] },
-          doki_fans: { title: 'Doki粉丝增长趋势', subtext: '30天Doki粉丝增长变化', data: [] },
-          super_rank: { title: '超话排名变化趋势', subtext: '30天超级话题排名变化', data: [], inverse: true }
+          baike_browse: { title: '百科浏览增长趋势', subtext: '30天图（增长数据）', data: [] },
+          baike_flowers: { title: '百科鲜花增长趋势', subtext: '30天图（增长数据）', data: [] },
+          weibo_fans: { title: '微博粉丝增长趋势', subtext: '30天图（增长数据）', data: [] },
+          doki_fans: { title: 'Doki粉丝增长趋势', subtext: '30天图（增长数据）', data: [] },
+          super_rank: { title: '超话排名变化趋势', subtext: '30天图（变化数据）', data: [], inverse: true, name: '超话排名' }
         };
       }
       data = data.list;
@@ -150,12 +150,12 @@ export default {
     async getDayData() {
       let data = await this.$api.getDayDataApi(this.memberID);
       this.seriesSaveDay = {
-        weibo_index: { title: '微博指数增长趋势', subtext: '7日微博指数增长变化', data: [] },
-        weibo_read: { title: '微博阅读增长趋势', subtext: '7日微博阅读增长变化', data: [] },
-        weibo_int: { title: '微博互动增长趋势', subtext: '7日微博互动增长变化', data: [] },
-        weibo_inf: { title: '微博影响增长趋势', subtext: '7日微博影响增长变化', data: [] },
-        weibo_love: { title: '微博爱慕增长趋势', subtext: '7日微博爱慕增长变化', data: [] },
-        weibo_total: { title: '微博势力排名变化趋势', subtext: '7日微博势力排名变化趋势', data: [], inverse: true }
+        weibo_index: { title: '微博指数变化趋势', subtext: '30天图（变化数据）', data: [], name: '微博指数' },
+        weibo_read: { title: '微博阅读变化趋势', subtext: '30天图（变化数据）', data: [], name: '微博阅读' },
+        weibo_int: { title: '微博互动变化趋势', subtext: '30天图（变化数据）', data: [], name: '微博互动' },
+        weibo_inf: { title: '微博影响变化趋势', subtext: '30天图（变化数据）', data: [], name: '影响力' },
+        weibo_love: { title: '微博爱慕变化趋势', subtext: '30天图（变化数据）', data: [], name: '爱慕值' },
+        weibo_total: { title: '微博势力排名变化趋势', subtext: '30天图（变化数据）', data: [], inverse: true, name: '排名' }
       };
       this.radioItemDay = 'weibo_index';
       data = data.list;
@@ -163,13 +163,12 @@ export default {
       let axis = [];
       for (let i = len - 2; i >= 0; i--) {
         let item = data[i];
-        let prev = data[i + 1];
         axis.push(this.$tools.formatTimeStamp(item.create_date - 86400, 'MM-dd'));
-        this.seriesSaveDay.weibo_index.data.push(item.weibo_index - prev.weibo_index);
-        this.seriesSaveDay.weibo_read.data.push(item.weibo_read.num - prev.weibo_read.num);
-        this.seriesSaveDay.weibo_int.data.push(item.weibo_int.interact - prev.weibo_int.interact);
-        this.seriesSaveDay.weibo_inf.data.push(item.weibo_inf.mention_search - prev.weibo_inf.mention_search);
-        this.seriesSaveDay.weibo_love.data.push(item.weibo_love.close - prev.weibo_love.close);
+        this.seriesSaveDay.weibo_index.data.push(item.weibo_index);
+        this.seriesSaveDay.weibo_read.data.push(item.weibo_read.num);
+        this.seriesSaveDay.weibo_int.data.push(item.weibo_int.interact);
+        this.seriesSaveDay.weibo_inf.data.push(item.weibo_inf.mention_search);
+        this.seriesSaveDay.weibo_love.data.push(item.weibo_love.close);
         this.seriesSaveDay.weibo_total.data.push(item.weibo_total.rank_day);
       }
       this.xAxisDataDay = axis;
