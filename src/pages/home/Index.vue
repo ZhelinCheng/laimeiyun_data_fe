@@ -1,12 +1,12 @@
 <template>
     <div class="home">
       <el-alert
-        title="说明"
+        title="接口开放"
         type="warning"
-        description="微博势力的评分及排名两项数据之前一直统计的是周数据，目前已修正为天数据。"
+        description="本网站所有数据接口开放，接口文档在ICP备案左边。"
         center>
       </el-alert>
-      <h2 class="home-title">火箭少女101数据中心（尝鲜版）</h2>
+      <h2 class="home-title">火箭少女101数据中心（公测版）</h2>
       <TableListHour
         :tableData=tableData
         :tableTitle=tableTitleHour

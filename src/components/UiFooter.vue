@@ -4,6 +4,7 @@
       请在PC端使用Chrome、火狐、Edge、IE10+等现代浏览器
     </p>
     <p class="index-record">
+      <router-link to="/doc">API文档</router-link>&nbsp;&nbsp;
       <a href="http://www.miitbeian.gov.cn" rel="nofollow">蜀ICP备16004713号-8</a>
     </p>
   </div>

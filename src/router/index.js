@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Root from '@/pages/Root';
 import Home from '@/pages/home/router';
 import Details from '@/pages/details/router';
+import Doc from '@/pages/doc/router';
 
 Vue.use(Router);
 
@@ -11,7 +12,7 @@ export default new Router({
     {
       path: '/',
       component: Root,
-      children: [Home, Details]
+      children: [Home, Details, Doc]
     }
   ],
   scrollBehavior() {
